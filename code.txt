@@ -1,0 +1,22 @@
+primef = [2]
+for i in range(3, 1500):
+    for k in range(2, i):
+        if i % k == 0:
+            break
+    else:
+        primef.append(i)
+
+prime = [2]
+for i in range(3, 2000000):
+    is_prime = True
+    for x in primef:
+        if x * x > i:
+            break
+        if i % x == 0:
+            is_prime = False
+            break
+            
+    if is_prime:
+        prime.append(i)
+
+print(sum(prime))
